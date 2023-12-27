@@ -30,7 +30,8 @@ set $bar_setting_position            bottom
 set $bar_setting_mode                dock
 set $bar_setting_font                pango:Source Sans Pro, Semibold 9
 set $bar_setting_separator           " - "
-set $bar_setting_statusCommand       i3status
+set $bar_setting_statusCommand       i3blocks
+
 set $bar_setting_trayoutput          full
 
 set $bar_color_background            #3B4252
@@ -75,6 +76,9 @@ bindsym $mod+n exec $wm_setting_app_terminal
 # Start a web browser
 bindsym $mod+b exec $wm_setting_app_browser
 
+# Open notes
+bindsym $mod+Ctrl+l exec ~/logseq/logseq_sync_wrapper.sh
+
 # Start a program launcher
 bindsym $mod+d exec $wm_setting_app_launcher
 
@@ -87,9 +91,11 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #i
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
+#bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+#bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 ### MONITORS ###
 set $fm HDMI-1-0
@@ -121,7 +127,6 @@ set $ws20 "20"
 
 workspace $ws1 output $fm
 workspace $ws2 output $fm
-workspace $ws3 output $fm
 workspace $ws3 output $fm
 workspace $ws4 output $fm
 workspace $ws5 output $fm
@@ -281,7 +286,7 @@ font $wm_setting_font
 floating_modifier $mod
 
 # Enter fullscreen mode for the focused window
-bindsym $mod+f fullscreen toggle
+bindsym $mod+x fullscreen toggle
 
 # Toggle between tiling and floating
 bindsym $mod+$smod+f floating toggle
@@ -292,7 +297,10 @@ bindsym $mod+BackSpace kill
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$smod+r restart
 
-# Open config file
+# Open file manager
+bindsym $mod+f exec thunar ~
+
+# Open config file in codium
 bindsym $mod+$smod+c exec codium ~/.config/i3/
 
 # Exit i3 (logs you out of your X session)
