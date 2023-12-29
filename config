@@ -19,6 +19,7 @@ set $wm_setting_app_terminal         alacritty
 set $wm_setting_app_browser          brave-browser
 set $wm_setting_app_text_editor		 codium
 set $wm_setting_app_notes			 ~/logseq/logseq_sync_wrapper.sh
+set $wm_setting_app_password_manager bitwarden
 set $wm_setting_app_launcher         dmenu_run
 set $wm_setting_app_compositor       picom
 
@@ -87,8 +88,8 @@ bindsym $mod+f exec thunar ~
 # Open text editor
 bindsym $mod+c exec $wm_setting_app_text_editor
 
-# Open config file in text editor
-bindsym $mod+$smod+c exec $wm_setting_app_text_editor ~/.config/i3/
+# Open password manager
+bindsym $mod+p exec $wm_setting_app_password_manager
 
 # Start a program launcher
 bindsym $mod+d exec $wm_setting_app_launcher
@@ -308,6 +309,8 @@ bindsym $mod+BackSpace kill
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$smod+r restart
 
+# Open config file in text editor
+bindsym $mod+$smod+c exec $wm_setting_app_text_editor ~/.config/i3/
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
