@@ -94,6 +94,9 @@ bindsym $mod+p exec $wm_setting_app_password_manager
 # Start a program launcher
 bindsym $mod+d exec $wm_setting_app_launcher
 
+# Take screenshot
+bindsym $mod+$smod+s exec flameshot gui
+
 # Run a window compositor (for effects like transparency or full VSync)
 exec_always --no-startup-id $wm_setting_app_compositor
 
