@@ -4,7 +4,7 @@
 
 ### Variables for settings (This makes changing them WAY easier!) ###
 set $mod                             Mod4
-set $alt			     Mod1
+set $alt			     			 Mod1
 set $smod                            Shift
 set $wm_setting_font                 pango:Source Sans Pro, Semibold 11
 set $wm_setting_gap_width            10
@@ -19,7 +19,7 @@ set $wm_setting_app_terminal         alacritty
 set $wm_setting_app_browser          brave-browser
 set $wm_setting_app_text_editor		 codium
 set $wm_setting_app_notes			 ~/logseq/logseq_sync_wrapper.sh
-set $wm_setting_app_password_manager bitwarden
+set $wm_setting_app_password_manager ~/Bitwarden-2023.12.1-x86_64.AppImage
 set $wm_setting_app_launcher         dmenu_run
 set $wm_setting_app_compositor       picom
 
@@ -33,7 +33,7 @@ set $bar_setting_position            bottom
 set $bar_setting_mode                dock
 set $bar_setting_font                pango:Source Sans Pro, Semibold 9
 set $bar_setting_separator           " - "
-set $bar_setting_statusCommand       i3blocks
+set $bar_setting_statusCommand       i3status
 
 set $bar_setting_trayoutput          full
 
@@ -169,21 +169,24 @@ workspace $ws20 output $sm
 #workspace_auto_back_and_forth yes
 
 # Switch to workspace n
-bindsym $mod+1 workspace $ws11; workspace $ws1
-bindsym $mod+2 workspace $ws12; workspace $ws2
-bindsym $mod+3 workspace $ws13; workspace $ws3
-bindsym $mod+4 workspace $ws14; workspace $ws4
-bindsym $mod+5 workspace $ws15; workspace $ws5
-bindsym $mod+6 workspace $ws16; workspace $ws6
-bindsym $mod+7 workspace $ws17; workspace $ws7
-bindsym $mod+8 workspace $ws18; workspace $ws8
-bindsym $mod+9 workspace $ws19; workspace $ws9
-bindsym $mod+0 workspace $ws20; workspace $ws10
+#bindsym $mod+1 workspace $ws11; workspace $ws1
+#bindsym $mod+2 workspace $ws12; workspace $ws2
+#bindsym $mod+3 workspace $ws13; workspace $ws3
+#bindsym $mod+4 workspace $ws14; workspace $ws4
+#bindsym $mod+5 workspace $ws15; workspace $ws5
+#bindsym $mod+6 workspace $ws16; workspace $ws6
+#bindsym $mod+7 workspace $ws17; workspace $ws7
+#bindsym $mod+8 workspace $ws18; workspace $ws8
+#bindsym $mod+9 workspace $ws19; workspace $ws9
+#bindsym $mod+0 workspace $ws20; workspace $ws10
 
 
 # Move focus to next/previous workspace
-bindsym $mod+Next workspace prev
-bindsym $mod+Prior workspace next
+bindsym $mod+Next exec ~/.config/i3/move_focus_to_previous_workspace
+bindsym $mod+Prior exec ~/.config/i3/move_focus_to_next_workspace
+
+
+#bindsym $mod+Prior workspace next
 
 # Move focused container to workspace n
 bindsym $mod+$smod+1 move container to workspace $ws1
@@ -198,9 +201,8 @@ bindsym $mod+$smod+9 move container to workspace $ws9
 bindsym $mod+$smod+0 move container to workspace $ws10
 
 # Move focused container to next/previous workspace
-#bindsym $mod+$alt+Prior exec ~/.config/i3/move_to_previous_workspace
-bindsym $mod+$alt+Next exec ~/.config/i3/move_to_previous_workspace
-bindsym $mod+$alt+Prior exec ~/.config/i3/move_to_next_workspace
+bindsym $mod+$alt+Next exec ~/.config/i3/move_window_to_previous_workspace
+bindsym $mod+$alt+Prior exec ~/.config/i3/move_window_to_next_workspace
 
 # Moving window between screens 
 bindsym $mod+$smod+h move container to output left; focus left;
