@@ -17,9 +17,9 @@ set $wm_setting_key_right            l
 
 set $wm_setting_app_terminal         alacritty
 set $wm_setting_app_browser          brave-browser
-set $wm_setting_app_text_editor		 codium
+set $wm_setting_app_text_editor		 code
 set $wm_setting_app_notes			 ~/logseq/logseq_sync_wrapper.sh
-set $wm_setting_app_password_manager ~/Bitwarden-2023.12.1-x86_64.AppImage
+set $wm_setting_app_password_manager ~/Bitwarden*.AppImage
 set $wm_setting_app_launcher         rofi -show drun
 set $wm_setting_app_compositor       picom
 
@@ -294,6 +294,11 @@ bar {
 bindsym $mod+$alt+b exec --no-startup-id i3-msg bar mode toggle
 #bindsym $mod+Shift+m exec --no-startup-id i3-msg bar mode toggle
 
+### FLOATING EXCEPTIONS ###
+for_window [class="PenTablet" instance="PenTablet"] floating enable
+#for_window [class="Bitwarden" instance="bitwarden"] floating enable
+#for_window [class="discord" instance="discord"] floating enable
+
 ### Miscellaneous settings ###
 # Set the font used for titlebars (which are hidden here)
 font $wm_setting_font
@@ -313,8 +318,12 @@ bindsym $mod+BackSpace kill
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+$smod+r restart
 
+bindsym $mod+$smod+x exec --no-startup-id i3lock -i ~/.wallpapers/sakamoto_inverted.png -t -u
+
 # Open config file in text editor
 bindsym $mod+$smod+c exec $wm_setting_app_text_editor ~/.config/i3/
 
 # Exit i3 (logs you out of your X session)
 bindsym $mod+$smod+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+#test
