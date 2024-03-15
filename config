@@ -71,6 +71,9 @@ exec_always feh --randomize --bg-fill --no-startup-id ~/.wallpapers/*
 # Apply blue light filter
 exec_always redshift -PO 2500
 
+# If this isn't run, copy to clipboard won't work
+exec_always nohup flameshot &
+
 ### Applications ###
 # Start a terminal emulator
 bindsym $mod+n exec $wm_setting_app_terminal
