@@ -99,6 +99,9 @@ bindsym $mod+d exec $wm_setting_app_launcher
 # Take screenshot
 bindsym $mod+$smod+s exec flameshot gui
 
+# Language OCR
+bindsym $mod+$smod+a exec --no-startup-id ~/ocr_on_demand/venv/bin/python3 ~/ocr_on_demand/main.py
+
 # Run a window compositor (for effects like transparency or full VSync)
 exec_always --no-startup-id $wm_setting_app_compositor
 
