@@ -66,7 +66,7 @@ exec_always ~/.config/i3/autotiling
 exec_always ~/.config/i3/desk_setup.sh
 
 # Display Wallpaper
-exec_always feh --randomize --bg-fill --no-startup-id ~/.wallpapers/*
+exec_always feh --bg-fill --randomize --no-startup-id ~/.wallpapers/*
 
 # Apply blue light filter
 exec_always redshift -PO 2500
@@ -187,8 +187,8 @@ workspace $ws20 output $sm
 
 
 # Move focus to next/previous workspace
-bindsym $mod+Next exec ~/.config/i3/move_focus_to_previous_workspace
-bindsym $mod+Prior exec ~/.config/i3/move_focus_to_next_workspace
+bindsym $mod+Prior exec ~/.config/i3/move_focus_to_previous_workspace
+bindsym $mod+Next exec ~/.config/i3/move_focus_to_next_workspace
 
 
 #bindsym $mod+Prior workspace next
@@ -206,8 +206,8 @@ bindsym $mod+$smod+9 move container to workspace $ws9
 bindsym $mod+$smod+0 move container to workspace $ws10
 
 # Move focused container to next/previous workspace
-bindsym $mod+$alt+Next exec ~/.config/i3/move_window_to_previous_workspace
-bindsym $mod+$alt+Prior exec ~/.config/i3/move_window_to_next_workspace
+bindsym $mod+$alt+Prior exec ~/.config/i3/move_window_to_previous_workspace
+bindsym $mod+$alt+Next exec ~/.config/i3/move_window_to_next_workspace
 
 # Moving window between screens 
 bindsym $mod+$smod+h move container to output left; focus left;
