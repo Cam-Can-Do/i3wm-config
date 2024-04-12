@@ -210,8 +210,8 @@ bindsym $mod+$alt+Prior exec ~/.config/i3/move_window_to_previous_workspace
 bindsym $mod+$alt+Next exec ~/.config/i3/move_window_to_next_workspace
 
 # Moving window between screens 
-bindsym $mod+$smod+h move container to output left; focus left;
-bindsym $mod+$smod+l move container to output right; focus right;
+bindsym $mod+$alt+$wm_setting_key_left move container to output left; focus left;
+bindsym $mod+$alt+$wm_setting_key_right move container to output right; focus right;
 
 #bindsym $mod+$smod+h move container to output left; focus left; layout splith;
 #bindsym $mod+$smod+l move container to output right; focus right; layout splith;
@@ -322,7 +322,7 @@ bindsym $mod+$smod+f floating toggle
 bindsym $mod+BackSpace kill
 
 # Restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+$smod+r restart
+bindsym $mod+$alt+r restart
 
 bindsym $mod+$smod+x exec --no-startup-id i3lock -i ~/Pictures/Wallpapers/.wallpapers/sakamoto_inverted.png -t -u
 
