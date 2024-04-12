@@ -37,19 +37,21 @@ set $bar_setting_statusCommand       i3status
 
 set $bar_setting_trayoutput          full
 
-set $bar_color_background            #3B4252
+set $bar_color_background            #2E3440
 set $bar_color_foreground            #D8DEE9
 set $bar_color_statusline            #D8DEE9
 set $bar_color_separator             #D8DEE9
 
-set $bar_color_workspace_focused_bg  #3d94e5
-set $bar_color_workspace_focused_fg  #ffffff
-set $bar_color_workspace_active_bg   #14395b
-set $bar_color_workspace_active_fg   #ffffff
-set $bar_color_workspace_inactive_bg #3d4a56
-set $bar_color_workspace_inactive_fg #ffffff
-set $bar_color_workspace_urgent_bg   #7b3bf9
-set $bar_color_workspace_urgent_fg   #ffffff
+set $bar_color_workspace_focused_bg  #3B4252
+set $bar_color_workspace_focused_fg  #FFC0CB
+set $bar_color_workspace_active_bg   #3B4252
+set $bar_color_workspace_active_fg   #FFB6C1
+set $bar_color_workspace_inactive_bg #3B4252
+set $bar_color_workspace_inactive_fg #FF69B4
+set $bar_color_workspace_urgent_bg   #3B4252
+set $bar_color_workspace_urgent_fg   #FF1493
+
+
 
 focus_wrapping no
 
