@@ -1,7 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+
+# Get the number of the currently focused workspace
 previous_workspace=$(i3-msg -t get_workspaces | jq -r '.[] | select(.focused == true).num')
-if [ $previous_workspace -gt 1 ] && [ $previous_workspace -ne 11 ]; then
+
+# Check if the previous workspace exists and is not workspace 1 or 11
+if [ "$previous_workspace" -gt 1 ] && [ "$previous_workspace" -ne 11 ]; then
     previous_workspace=$((previous_workspace - 1))
 
     # Check if the previous workspace has any windows
@@ -13,7 +17,7 @@ if [ $previous_workspace -gt 1 ] && [ $previous_workspace -ne 11 ]; then
 
     # Move to the previous workspace
     echo "Moving to Previous Workspace: $previous_workspace"
-    i3-msg workspace $previous_workspace
+    i3-msg workspace "$previous_workspace"
 else
     echo "Previous Workspace Does Not Exist"
 fi

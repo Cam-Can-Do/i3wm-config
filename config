@@ -18,7 +18,7 @@ set $wm_setting_key_right            l
 set $wm_setting_app_terminal         alacritty
 set $wm_setting_app_browser          brave
 set $wm_setting_app_text_editor		 code
-set $wm_setting_app_notes	logseq_sync_wrapper.sh
+set $wm_setting_app_notes	Logseq*.AppImage
 set $wm_setting_app_password_manager ~/Bitwarden*.AppImage
 set $wm_setting_app_launcher         rofi -show drun
 set $wm_setting_app_compositor       picom
@@ -62,7 +62,7 @@ exec_always xinput --set-prop "Kingston HyperX Pulsefire Surge" 'libinput Accel 
 
 
 # autotiling: https://github.com/nwg-piotr/autotiling
-exec_always ~/.config/i3/autotiling
+exec_always ~/.config/i3/venv/bin/python3 ~/.config/i3/autotiling
 
 # Set displays and resolutions
 exec_always ~/.config/i3/desk_setup.sh
@@ -120,8 +120,8 @@ bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute s
 #bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 ### MONITORS ###
-set $fm HDMI-1-0
-set $sm eDP-1
+set $fm HDMI-0
+set $sm eDP-1-1
 
 ### WORKSPACES ###
 # Define names for default workspaces for which we configure key bindings later on.
@@ -190,7 +190,7 @@ workspace $ws20 output $sm
 
 # Move focus to next/previous workspace
 bindsym $mod+Prior exec ~/.config/i3/move_focus_to_previous_workspace
-bindsym $mod+Next exec ~/.config/i3/move_focus_to_next_workspace
+bindsym $mod+Next exec  ~/.config/i3/move_focus_to_next_workspace
 
 
 #bindsym $mod+Prior workspace next
@@ -208,8 +208,8 @@ bindsym $mod+$smod+9 move container to workspace $ws9
 bindsym $mod+$smod+0 move container to workspace $ws10
 
 # Move focused container to next/previous workspace
-bindsym $mod+$alt+Prior exec ~/.config/i3/move_window_to_previous_workspace
-bindsym $mod+$alt+Next exec ~/.config/i3/move_window_to_next_workspace
+bindsym $mod+$alt+Prior exec ~/.config/i3/venv/bin/python3 ~/.config/i3/move_window_to_previous_workspace
+bindsym $mod+$alt+Next exec ~/.config/i3/venv/bin/python3 ~/.config/i3/move_window_to_next_workspace
 
 # Moving window between screens 
 bindsym $mod+$alt+$wm_setting_key_left move container to output left; focus left;
